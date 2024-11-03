@@ -1,0 +1,7 @@
+.input-dark-mode::placeholder {
+    color: white;
+  }
+  
+  .input-light-mode::placeholder {
+    color: gray;
+  }
