@@ -9,12 +9,8 @@ import MovieDetails from "./Components/MovieDetails";
 
 function App() {
   const [mode,setMode] = useState("white");
-  const [watchList,setwatchList]=useState([])
+  const [watchList,setwatchList]=useState([]);
   const apiKey=import.meta.env.REACT_APP_MOVIE_API
-  
-  
-  
-  
   
   const changeMode=()=>{
     if(mode === "white"){
@@ -62,7 +58,7 @@ function App() {
         <Navbar changeMode={changeMode} mode={mode}/>
 
         <Routes>
-          <Route path="/" element={<><Banner/><Movies apiKey={apiKey} handleAddtoWatchlist={handleAddtoWatchlist} handleRemoveFromWatchList={handleRemoveFromWatchList} watchList={watchList} mode={mode}/></>} />
+          <Route path="/" element={<><Banner apiKey={apiKey}/><Movies apiKey={apiKey} handleAddtoWatchlist={handleAddtoWatchlist} handleRemoveFromWatchList={handleRemoveFromWatchList} watchList={watchList} mode={mode}/></>} />
           <Route path="/watchlist" element={<Watchlist watchList={watchList} handleRemoveFromWatchList={handleRemoveFromWatchList} mode={mode} setwatchList={setwatchList}/>} />
           <Route path="/movie/:id" element={<MovieDetails/>}/>
         </Routes>
